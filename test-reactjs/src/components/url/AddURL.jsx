@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function AddURL({ setLinks }) {
   const [url, setUrl] = useState("");
-  const [shortedUrl, setShortedUrl] = useState("");
+  const [shortedUrl, setShortedUrl] = useState("sdfsd");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -96,9 +96,9 @@ export default function AddURL({ setLinks }) {
         {shortedUrl && !loading && (
           <section className="flex items-center justify-center">
             <div
-              className={`flex items-center justify-between gap-4 px-4 py-4 rounded ${
+              className={`flex items-center justify-between gap-4 mt-2 px-4 py-4 rounded ${
                 copiedId ? "bg-green-900" : "bg-orange-900"
-              } w-md`}
+              } md:w-md  `}
             >
               <p>https://linkify.api.azcs.site/api/{shortedUrl}</p>
               <button
