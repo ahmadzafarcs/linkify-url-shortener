@@ -3,6 +3,7 @@ import HomePage from "./components/pages/HomePage";
 import DisabledAuth from "./components/ui/DisabledAuth";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalLayout from "./components/ui/GlobalLayout";
+import Redirect from "./components/url/Redirect";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -32,6 +33,7 @@ function App() {
           <Route path="/" element={<HomePage loading={loading} />} />
           <Route path="/login" element={<DisabledAuth />} />
           <Route path="/register" element={<DisabledAuth />} />
+          <Route path="/:urlId" element={<Redirect />} />
         </Route>
       </Routes>
     </BrowserRouter>
