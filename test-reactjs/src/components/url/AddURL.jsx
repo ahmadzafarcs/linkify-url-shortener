@@ -103,12 +103,12 @@ export default function AddURL({ setLinks }) {
               } w-md`}
             >
               <p>https://linkify.api.azcs.site/api/{shortedUrl}</p>
-              <Button
+              <button
                 onClick={() => copyToClipboard(shortedUrl)}
                 className={`cursor-pointer ${copiedId ? "text-green-500" : ""}`}
               >
                 <Copy />
-              </Button>
+              </button>
             </div>
           </section>
         )}
