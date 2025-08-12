@@ -64,9 +64,7 @@ export default function AddURL({ setLinks }) {
           >
             <Field className="grid grid-rows-[auto_1fr] gap-2 justify-center">
               {error && (
-                <Description className="text-sm text-red-400">
-                  {error}
-                </Description>
+                <Description className="text-sm text-red-400"></Description>
               )}
               <div className="grid grid-rows-[1fr_auto] md:grid-cols-[1fr_auto] items-center gap-4 md:gap-2 md:w-[600px]">
                 <Input
