@@ -21,7 +21,7 @@ export default function Links({ links, setLinks }) {
   }
 
   async function copyToClipboard(id) {
-    const shortLink = `https://linkify.api.azcs.site/${id}`;
+    const shortLink = `https://linkify.api.azcs.site/api/${id}`;
     try {
       await navigator.clipboard.writeText(shortLink);
       setCopiedId(id);
