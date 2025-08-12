@@ -40,7 +40,7 @@ export default function Links({ links, setLinks }) {
               target="_blank"
               className="hover:underline cursor-pointer break-all"
             >
-              {`linkify.site/${link?.urlId}`}
+              {`linkify.azcs.site/${link?.urlId}`}
             </a>
             <Button
               onClick={() => deleteURL(link.urlId)}
