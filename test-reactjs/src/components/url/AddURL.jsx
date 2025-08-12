@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function AddURL({ setLinks }) {
   const [url, setUrl] = useState("");
-  const [shortedUrl, setShortedUrl] = useState("sfsfsd453");
+  const [shortedUrl, setShortedUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -12,6 +12,7 @@ export default function AddURL({ setLinks }) {
     e.preventDefault();
     try {
       setLoading(true);
+      setShortedUrl("");
       if (!url) {
         setError("URL is required");
         return;
@@ -43,7 +44,7 @@ export default function AddURL({ setLinks }) {
   const [copiedId, setCopiedId] = useState(null);
 
   async function copyToClipboard(id) {
-    const shortLink = `https://linkify.azcs.site/${id}`;
+    const shortLink = `https://linkify.api.azcs.site/${id}`;
     try {
       await navigator.clipboard.writeText(shortLink);
       setCopiedId(id);

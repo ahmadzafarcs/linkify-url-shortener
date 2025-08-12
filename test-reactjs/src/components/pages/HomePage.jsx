@@ -4,7 +4,7 @@ import Links from "../url/Links";
 import { useState } from "react";
 import { Button } from "@headlessui/react";
 
-function HomePage({ loading, links, setLinks }) {
+function HomePage({ setLinks }) {
   return (
     <main className="w-[90vw] m-auto relative">
       <div className="flex flex-col items-center justify-center gap-8 mt-10">
