@@ -17,7 +17,7 @@ export default function AddURL({ setLinks }) {
         setError("URL is required");
         return;
       }
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/url`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/url`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
