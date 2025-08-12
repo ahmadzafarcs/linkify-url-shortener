@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import AddURL from "./components/url/AddURL";
-import Links from "./components/url/Links";
+import HomePage from "./components/pages/HomePage";
+import DisabledAuth from "./components/ui/DisabledAuth";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GlobalLayout from "./components/ui/GlobalLayout";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -24,19 +26,20 @@ function App() {
     getURLs();
   }, []);
   return (
-    <>
-      <main className="w-[90vw] m-auto">
-        <div className="flex flex-col items-center justify-center gap-14 mt-10">
-          <h2 className="text-xl font-bold">URL Shortner</h2>
-          <AddURL setLinks={setLinks} />
-          {loading ? (
-            <span className="text-white">Loading URLs...</span>
-          ) : (
-            <Links links={links} setLinks={setLinks} />
-          )}
-        </div>
-      </main>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<GlobalLayout />}>
+          <Route
+            path="/"
+            element={
+              <HomePage loading={loading} links={links} setLinks={setLinks} />
+            }
+          />
+          <Route path="/login" element={<DisabledAuth />} />
+          <Route path="/register" element={<DisabledAuth />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

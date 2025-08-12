@@ -19,7 +19,7 @@ app.use(
 
 const urlRouter = require("./routes/url.route");
 
-app.use("/api", urlRouter);
+app.use("/", urlRouter);
 
 connectDB().then(() => {
   app.listen(PORT, () => {
