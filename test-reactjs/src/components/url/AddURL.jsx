@@ -44,7 +44,7 @@ export default function AddURL({ setLinks }) {
   const [copiedId, setCopiedId] = useState(null);
 
   async function copyToClipboard(id) {
-    const shortLink = `https://linkify.api.azcs.site/${id}`;
+    const shortLink = `https://linkify.api.azcs.site/api/${id}`;
     try {
       await navigator.clipboard.writeText(shortLink);
       setCopiedId(id);
@@ -102,7 +102,7 @@ export default function AddURL({ setLinks }) {
                 copiedId ? "bg-green-900" : "bg-orange-900"
               } w-md`}
             >
-              <p>https://linkify.azcs.site/{shortedUrl}</p>
+              <p>https://linkify.api.azcs.site/api/{shortedUrl}</p>
               <Button
                 onClick={() => copyToClipboard(shortedUrl)}
                 className={`cursor-pointer ${copiedId ? "text-green-500" : ""}`}
